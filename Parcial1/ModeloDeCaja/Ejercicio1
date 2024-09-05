@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initlal-scale=1.0"> 
+            <title>Document</title> 
+            <style>
+            .cajaInline { 
+                display: inline; border: 1px-solid blue; }
+            .cajaBlock { 
+                display: block; border: 1px-solid red; }
+            </style> 
+        </head> 
+        <body> 
+            <div class="cajaInline">Contenido</div> 
+            <div class="cajaBlock">Contenido</div> 
+            <div class="cajaInline">Contenido</div> 
+            <div class="cajaInline">Contenido</div> 
+            <div class="cajaInline">Contenido</div> 
+        </body> 
+        </html>
