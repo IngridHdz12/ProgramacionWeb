@@ -6,15 +6,15 @@
             .caja { 
                 width:200px;
                 height:200px;
-                background-color: blue;
-                border: 2px solid red;
-                color: yellow;
+                background-color:aqua;
+                border: 10px solid blueviolet;
+                color: blueviolet;
             }
 
             #caja2{
                 position: absolute;
-                top: 50px;
-                left: 50px;
+                top: 100px;
+                left: 100px;
             }
 
            

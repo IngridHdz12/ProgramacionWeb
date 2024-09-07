@@ -6,9 +6,9 @@
             <title>Document</title> 
             <style>
             .cajaInline { 
-                display: inline; border: 1px-solid blue; }
+                display: inline; border: 1px solid blue; }
             .cajaBlock { 
-                display: block; border: 1px-solid red; }
+                display: block; border: 1px solid red; }
             </style> 
         </head> 
         <body> 

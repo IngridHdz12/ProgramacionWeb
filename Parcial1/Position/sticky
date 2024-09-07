@@ -5,8 +5,8 @@
             <style>
             .caja { 
                 width:200px;
-                height:200px;
-                background-color: black;
+                height:300px;
+                background-color: palevioletred;
                 border: 2px solid red;
                 color: yellow;
             }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+             
+            <style>
+                .Contenedor{
+                  background-color: aqua;  
+                  overflow: auto;
+                font-size:larger;
+                }
+
+            .caja { 
+                float: left;
+                width:500px;
+                height:50px;
+                background-color: blue;
+                border: 2px solid red;
+                color: yellow;
+                margin-right: 20px;
+            }
+
+            #caja4{
+                clear:left;                
+            }      
+           
+            </style> 
+        </head> 
+        <body> 
+            <div class= "Contenedor">
+            <div class="caja" id="caja">Caja 1</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ratione earum amet quae id excepturi, molestiae saepe aperiam totam libero illum, veniam dicta, sint sit et illo fuga explicabo quaerat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore sit ullam tempora dignissimos voluptates beatae quasi ea quidem, quae amet labore officia repellendus tenetur. Totam magni laborum odio exercitationem accusamus. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui labore, laboriosam porro quisquam animi obcaecati enim amet, id nisi aliquam, asperiores in eum velit ea at vitae voluptatibus dicta dignissimos.</p>
+                <p>eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+        </div>
+          
+        </body> 
+        </html>
