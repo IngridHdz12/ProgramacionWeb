@@ -1,0 +1,66 @@
+# UNIDADES Y MEDIDAS DE CSS
+
+## Unidades absolutas 
+
+| Unidad | Descripción                                | Ejemplo              |
+|--------|--------------------------------------------|----------------------|
+| px     | Píxeles (un punto en la pantalla)          | `width: 100px;`      |
+| cm     | Centímetros                                | `width: 10cm;`       |
+| mm     | Milímetros                                 | `width: 20mm;`       |
+| in     | Pulgadas (1in = 2.54cm)                    | `width: 1in;`        |
+| pt     | Puntos (1pt = 1/72 de pulgada)             | `font-size: 12pt;`   |
+| pc     | Picas (1pc = 12pt)                         | `width: 2pc;`        |
+
+
+
+## Unidades relativas
+
+| Unidad | Descripción                                                     | Ejemplo                  |
+|--------|-----------------------------------------------------------------|--------------------------|
+| %      | Porcentaje relativo al elemento contenedor                      | `width: 50%;`            |
+| em     | Relativo al tamaño de fuente del contenedor                     | `font-size: 2em;`        |
+| rem    | Relativo al tamaño de fuente raíz (`<html>`)                    | `font-size: 1.5rem;`     |
+| vw     | Porcentaje del ancho del viewport                               | `width: 50vw;`           |
+| vh     | Porcentaje de la altura del viewport                            | `height: 75vh;`          |
+| vmin   | Valor menor entre `vw` y `vh`                                   | `width: 10vmin;`         |
+| vmax   | Valor mayor entre `vw` y `vh`                                   | `width: 20vmax;`         |
+| ex     | Relativo a la altura de la "x" minúscula en la fuente actual     | `font-size: 3ex;`        |
+| ch     | Relativo al ancho del carácter "0" en la fuente actual          | `width: 30ch;`           |
+
+
+## Unidades de tiempo 
+
+| Unidad | Descripción                     | Ejemplo                  |
+|--------|---------------------------------|--------------------------|
+| s      | Segundos                        | `transition: 0.5s;`      |
+| ms     | Milisegundos                    | `animation: 500ms;`      |
+
+
+## Unidades de ángulo
+
+| Unidad | Descripción                     | Ejemplo                     |
+|--------|---------------------------------|-----------------------------|
+| deg    | Grados (360° = círculo completo)| `transform: rotate(45deg);` |
+| rad    | Radianes (2π rad = círculo completo) | `transform: rotate(0.5rad);` |
+| grad   | Grados centesimales (400 grad = círculo completo) | `transform: rotate(100grad);` |
+| turn   | Giros completos (1turn = círculo completo) | `transform: rotate(0.25turn);` |
+
+
+## Unidades de resolución
+
+| Unidad | Descripción                        | Ejemplo                                   |
+|--------|------------------------------------|-------------------------------------------|
+| dpi    | Puntos por pulgada (dots per inch) | `@media screen and (min-resolution: 300dpi)` |
+| dpcm   | Puntos por centímetro              | `@media screen and (min-resolution: 118dpcm)` |
+| dppx   | Puntos por píxel (1dppx = 96dpi)   | `@media screen and (min-resolution: 2dppx)`  |
+
+
+## Unidades para medida de fuentes 
+
+| Unidad | Descripción                        | Ejemplo                                   |
+|--------|------------------------------------|-------------------------------------------|
+| dpi    | Puntos por pulgada (dots per inch) | `@media screen and (min-resolution: 300dpi)` |
+| dpcm   | Puntos por centímetro              | `@media screen and (min-resolution: 118dpcm)` |
+| dppx   | Puntos por píxel (1dppx = 96dpi)   | `@media screen and (min-resolution: 2dppx)`  |
+
+
