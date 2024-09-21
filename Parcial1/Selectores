@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+             
+            <style>
+                div p {color:red;}
+                div > p {color: red }
+                div + p {color: red;}
+                /*div   p {color: red;}*/
+
+            </style> 
+        </head> 
+        <body> 
+            <div>
+                <p>parrafo 1</p>
+                <div>
+                    <p>parrafo 2</p>
+                </div>
+                <p>Parrafo 3</p>
+            </div>
+        </div>
+        <p>Parrafo 4</p>
+        <p>Parrafo 5</p>
+          
+        </body> 
+        </html>

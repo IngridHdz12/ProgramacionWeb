@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initlal-scale=1.0"> 
+            <title>Document</title> 
+            
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+            
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Leckerli+One&display=swap" rel="stylesheet">
+            
+            <style>
+                
+            
+            *{
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            .grid-container{
+                display: grid;             
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(20, 100px);                                
+            }        
+
+            .grid-container div{  
+                display: flex;                                    
+                
+            }          
+
+            .one{      
+                display: flex;          
+                align-items: center;
+                justify-content: center;        
+                background-color: rgb(255, 244, 230);
+                grid-column: 1/2;
+                position:sticky; 
+                top: 0;                
+            }
+
+            .one img {                
+                width: auto; 
+                height: 90%;                 
+            }
+
+            .two
+            {             
+                display: flex;          
+                align-items: center;
+                justify-content: center;       
+                background-color: rgb(255, 244, 230);
+                grid-column: 2/5;
+                position:sticky;                 
+                top: 0;        
+            }
+
+            .two img {
+                width: auto; 
+                height: 90%; 
+                margin-top: 10px;                
+            }
+
+            .three{
+                background-color: antiquewhite;
+                grid-column: 1/5;
+                grid-row: 2/5;                                    
+            }
+            .three2{                
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                font-family: "Quicksand", sans-serif;
+                font-weight: 900;
+                text-align: center;
+                font-size: xx-large;    
+                              
+            }
+
+            .four{
+                grid-column: 1/5;
+                grid-row: 5/12;
+                justify-content: center;
+            }
+
+            .five{
+                margin-top: 40px;
+                justify-content: space-around;
+                grid-column: 1/5;
+                grid-row: 12/16;
+                
+            }
+
+            .five2{
+                flex-direction: column;             
+                justify-content: space-around;
+                font-family: "Quicksand", sans-serif;
+                font-weight: 500;
+                text-align: left;
+                font-size: 20px;
+                margin-left: 20px;
+            }
+            
+            .six{
+                margin-top: 40px;
+                justify-content: space-around;
+                grid-column: 1/5;
+                grid-row: 16/20;
+                
+            }
+
+            .six2{
+                flex-direction: column;             
+                justify-content: space-around;
+                font-family: "Quicksand", sans-serif;
+                font-weight: 500;
+                text-align: left;
+                font-size: 20px;
+                margin-left: 20px;
+            }
+
+           
+            </style>
+
+            <body>
+                
+                <div class="grid-container">
+                    <div class="one">
+                        <img src="http://localhost/ProgramacionWeb/Parcial1/Coffee/logoo.png">
+                    </div>
+                    <div class="two">
+                        <img src="http://localhost/ProgramacionWeb/Parcial1/Coffee/Nombre.png">
+                    </div>
+                    <div class="three">
+                        <div class = "three2">                          
+                            <p>7 BREW MENU</p>
+                            <p>YOU-NIQUE DRINKS MADE TO YOUR VERSION OF PERFECTION</p>
+                            <p>Check our Full Menu</p>
+                        </div>
+                        <img src="http://localhost/ProgramacionWeb/Parcial1/Coffee/Imagen4.png">                       
+                    </div>
+                    <div class="four">
+                        <img src="http://localhost/ProgramacionWeb/Parcial1/Coffee/coffeees%20(1).gif">
+                    </div>
+                    <div class="five">                       
+                        <div class="five2">
+                            <p><strong>Cold Brew</strong> (20-90 CAL)</p>
+                            <p> <strong>Latte</strong> (120-320 CAL)</p>
+                            <p> <strong>Mocha</strong> (200-520 CAL)</p>
+                            <p><strong>Breve</strong> (250-660 CAL)</p>
+                            <p><strong></strong>strong>Caramel Macchiato</strong> (210-850 CAL)</p>
+                            <p><strong>House Blend </strong>(10-20 CAL)</p>
+                            <p><strong> Chai Latte</strong> (160-400 CAL)</p>
+                            <p><strong>Matcha Latte</strong> (170-390 CAL)</p>
+                            <p><strong>Cocoa</strong> (250-630 CAL)</p>                               
+                        </div>
+                        <img src="http://localhost/ProgramacionWeb/Parcial1/Coffee/Imagen2.png">
+                    </div>
+                    <div class="six">
+                        <img src="http://localhost/ProgramacionWeb/Parcial1/Coffee/Imagen3.png" >
+                        <div class="six2">
+                            <p><strong>Blondie</strong>
+                                Caramel & Vanilla Breve</p>
+                            <p> <strong>Brunette</strong>
+                                Hazelnut & Caramel Mocha</p>           
+                            <p> <strong>Smooth 7</strong>
+                                White Chocolate & Irish Cream Breve</p>    
+                            <p> <strong>Cinnamon Roll</strong>
+                                White Chocolate & Brown Sugar Cinnamon</p>      
+                            <p><strong>White Chocolate Mocha</strong>
+                                White & Milk Chocolate Mocha </p>                                
+                        </div>
+                    </div>
+                    
+                </div>
+            </body>
