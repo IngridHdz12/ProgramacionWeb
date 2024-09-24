@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+             
+            <style>
+
+                *{
+
+                }
+
+                .contenedor{
+                    width: 100vw;
+                    display: flex;
+                }
+              
+                .hijo{
+                    border: 1px, solid blue;
+                    background-color: aqua;
+                    flex-grow: 1;
+                    text-align: center;
+                }
+                @media screen and (max-width: 500px){ 
+                    .contenedor{
+                        flex-direction: column;
+                    }
+                }
+            </style> 
+        </head> 
+        <body> 
+            <div class="contenedor">
+                <div class="hijo">Hijo1</div>
+                <div class="hijo">Hijo2</div>
+                <div class="hijo">Hijo3</div>
+                <div class="hijo">Hijo4</div>
+                <div class="hijo">Hijo5</div>
+                <div class="hijo">Hijo6</div>
+            </div>
+        </div>
+        
+          
+        </body> 
+        </html>
