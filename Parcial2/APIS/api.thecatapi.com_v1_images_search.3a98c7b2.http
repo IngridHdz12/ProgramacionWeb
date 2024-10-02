@@ -1,0 +1,27 @@
+HTTP/1.1 200 OK
+authenticated: false
+cache-control: post-check=0, pre-check=0
+content-length: 89
+content-type: application/json; charset=utf-8
+date: Wed, 02 Oct 2024 22:47:39 GMT
+expires: Tue, 03 Jul 2001 06:00:00 GMT
+last-modified: Wed Oct 02 2024 22:47:39 GMT+0000 (Coordinated Universal Time)
+server: Google Frontend
+strict-transport-security: max-age=15552000; includeSubDomains
+vary: Origin
+x-cloud-trace-context: 522ae275329eea46dc3fd315ef808418
+x-content-type-options: nosniff
+x-dns-prefetch-control: off
+x-download-options: noopen
+x-frame-options: SAMEORIGIN
+x-response-time: 2ms
+x-xss-protection: 1; mode=block
+
+[
+  {
+    "id": "79d",
+    "url": "https://cdn2.thecatapi.com/images/79d.png",
+    "width": 624,
+    "height": 407
+  }
+]
