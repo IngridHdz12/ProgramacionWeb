@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        table td{
+            border: 2px solid blueviolet;
+            border-collapse: collapse;
+            width: 1%;
+            font-family: Century Gothic;
+            text-align: center;
+            height: 40px;
+        }
+
+        thead > tr:nth-child(1){
+            background-color: rgb(77, 6, 84);
+            color: aliceblue;
+            
+        }
+
+        tbody > tr:nth-child(odd){
+            background-color:rgb(234, 202, 253)
+        }
+        
+       tbody>tr:hover {
+            background-color: aqua;
+            color: brown;
+       }
+
+       tbody > tr td:active{
+            background-color: rgb(52, 42, 165);
+            color: aqua;
+       }
+
+       @media screen and (max-width:500px) {
+            table, tbody, thead, tr, td {
+                display: block;
+            }
+
+            tbody tr > td:first-child {
+            background-color: blue;
+            color: pink;
+            text-align: center;
+            }
+       }
+
+    </style>
+   
+</head>
+<body>
+    <table>
+        <thead>
+            <td><strong>Materia</strong></td>
+            <td><strong>Lunes</strong></td>
+            <td><strong>Martes</strong></td>
+            <td><strong>Miercoles</strong></td>
+            <td><strong>Jueves</strong></td>
+            <td><strong>Viernes</strong></td>           
+        </thead>
+
+        <body>
+            <tr>
+                <td><strong>Web</strong></td>
+                <td>7 - 8</td>
+                <td>7 - 8</td>
+                <td>7 - 8</td>
+                <td>7 - 8</td>
+                <td>7 - 8</td>            
+            </tr>
+
+            <tr>
+                <td><strong>Taller Inv.</strong></td>
+                <td>9 - 10</td>
+                <td> </td>
+                <td>9 - 10</td>
+                <td>9 - 10</td>
+                <td>9 - 10</td>
+            </tr>
+
+            <tr>
+                <td><strong>Bases de datos</strong></td>
+                <td>10 - 11</td>
+                <td>10 - 11</td>
+                <td>10 - 11</td>
+                <td>10 - 11</td>
+                <td>10 - 11</td>
+            </tr>
+
+            <tr>
+                <td><strong>Simulacion</strong></td>
+                <td>12 - 1</td>
+                <td>12 - 1</td>
+                <td>12 - 1</td>
+                <td>12 - 1</td>
+                <td>12 - 1</td>
+            </tr>
+
+            <tr>
+                <td><strong>Metodos numericos</strong></td>
+                <td>1 - 2</td>
+                <td>1 - 2</td>
+                <td>1 - 2</td>
+                <td>1 - 2</td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td><strong>Ecuaciones</strong></td>
+                <td>2 - 3</td>
+                <td>2 - 3</td>
+                <td>2 - 3</td>
+                <td>2 - 3</td>
+                <td>2 - 3</td>
+                
+            </tr>
+        </body>
+    </table>
+    
+</body>
+</html>
