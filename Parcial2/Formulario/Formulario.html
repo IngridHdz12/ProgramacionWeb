@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+        <script type="importmap">
+            {
+              "imports": {
+                "@material/web/": "https://esm.run/@material/web/"
+              }
+            }
+        </script>
+        <script type="module">
+            import '@material/web/all.js';
+            import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+        
+            document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+          </script>
+        
+        <script>
+            function togglePasswordVisibility() {
+                const passwordField = document.getElementById('passwordField');
+                const currentType = passwordField.type;
+                passwordField.type = currentType === 'password' ? 'text' : 'password';
+            }
+        </script>
+
+    <style>
+
+    *{
+        
+       
+       
+    }
+
+    .espacio{
+        display: flex;
+        justify-content: center;
+        
+        height: auto;
+        background-color: rgb(255, 255, 255);
+    }
+
+    .contenedor{
+        display: flex;    
+        
+        border-radius: 8px;       
+        border: 2px solid rgb(226, 226, 226);
+        width: 400px;
+        height: 600px;
+        margin: 30px;
+        padding: 30px 60px;  
+        flex-direction: column;     
+        font-family: Poppins;        
+        
+    }
+
+    md-outlined-text-field {
+        margin-top: 30px; 
+        
+    }
+
+    md-filled-tonal-button{
+        margin-top: 50px;
+    }
+    
+    </style>
+</head>
+<body>    
+    <div class="espacio">
+        <div class="contenedor">
+   
+                <h1>
+                    Formulario
+                </h1>    
+                         
+            <form action="#" method="post">
+         
+                <md-outlined-text-field label="Nombre(s)" for="nom"></label>
+                    <input type="text" name="Nombre" id="nom">
+                </md-outlined-text-field>
+
+                <md-outlined-text-field label="Apellidos" for="apell"></label>
+                    <input type="text" name="Apellido" id="apell">         
+                </md-outlined-text-field> 
+                
+                <md-outlined-text-field label="Correo" for="correo"></label>
+                    <input type="text" name="Correo" id="correo">         
+                </md-outlined-text-field> 
+
+                <md-outlined-text-field label="Contraseña" for="contraseña"></label>
+                    <input type="password" name="Contraseña" id="contraseña">         
+                </md-outlined-text-field> 
+                
+                <div>
+                    <p>Genero</p>
+                    <md-radio id="femeinino-radio" name="genero" value="Femenino"></md-radio>
+                        <label for="femeinino-radio">Femenino</label>
+
+                    <md-radio id="masculino-radio" name="genero" value="Masculino"></md-radio>
+                        <label for="masculino-radio">Masculino</label>
+                </div>
+                
+                <md-filled-tonal-button>
+                    Enviar
+                    <svg slot="icon" viewBox="0 0 48 48"><path d="M6 40V8l38 16Zm3-4.65L36.2 24 9 12.5v8.4L21.1 24 9 27Zm0 0V12.5 27Z"/></svg>
+                  </md-filled-tonal-button>
+            </form>
+             
+        </div>
+        
+    </div>
+</body>
+</html>

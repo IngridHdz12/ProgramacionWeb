@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario Escolar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            border: 2px solid blueviolet;
+            padding: 10px;
+            text-align: center;
+            height: 50px;
+        }
+
+        thead tr {
+            background-color: rgb(77, 6, 84);
+            color: aliceblue;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: rgb(234, 202, 253);
+        }
+        
+        tbody tr:hover {
+            background-color: aqua;
+            color: brown;
+        }
+
+        tbody tr td:active {
+            background-color: rgb(52, 42, 165);
+            color: aqua;
+        }
+
+        @media screen and (max-width: 700px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            thead tr {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 10px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            td {
+                width: 50%;
+                text-align: right;
+                position: relative;
+                padding-left: 50%;
+            }
+
+            td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-left: 10px;
+                text-align: left;
+                font-weight: bold;
+                color: blueviolet;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Materia"><strong>Web</strong></td>
+                <td data-label="Lunes">7 - 8</td>
+                <td data-label="Martes">7 - 8</td>
+                <td data-label="Miércoles">7 - 8</td>
+                <td data-label="Jueves">7 - 8</td>
+                <td data-label="Viernes">7 - 8</td>
+            </tr>
+            <tr>
+                <td data-label="Materia"><strong>Taller Inv.</strong></td>
+                <td data-label="Lunes">9 - 10</td>
+                <td data-label="Martes"></td>
+                <td data-label="Miércoles">9 - 10</td>
+                <td data-label="Jueves">9 - 10</td>
+                <td data-label="Viernes">9 - 10</td>
+            </tr>
+            <tr>
+                <td data-label="Materia"><strong>Base de datos</strong></td>
+                <td data-label="Lunes">10 - 11</td>
+                <td data-label="Martes">10 - 11</td>
+                <td data-label="Miércoles">10 - 11</td>
+                <td data-label="Jueves">10 - 11</td>
+                <td data-label="Viernes">10 - 11</td>
+            </tr>
+            <tr>
+                <td data-label="Materia"><strong>Simulación</strong></td>
+                <td data-label="Lunes">12 - 1</td>
+                <td data-label="Martes">12 - 1</td>
+                <td data-label="Miércoles">12 - 1</td>
+                <td data-label="Jueves">12 - 1</td>
+                <td data-label="Viernes">12 - 1</td>
+            </tr>
+            <tr>
+                <td data-label="Materia"><strong>Métodos Numéricos</strong></td>
+                <td data-label="Lunes">1 - 2</td>
+                <td data-label="Martes">1 - 2</td>
+                <td data-label="Miércoles">1 - 2</td>
+                <td data-label="Jueves">1 - 2</td>
+                <td data-label="Viernes"></td>
+            </tr>
+            <tr>
+                <td data-label="Materia"><strong>Ecuaciones</strong></td>
+                <td data-label="Lunes">2 - 3</td>
+                <td data-label="Martes">2 - 3</td>
+                <td data-label="Miércoles">2 - 3</td>
+                <td data-label="Jueves">2 - 3</td>
+                <td data-label="Viernes">2 - 3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
