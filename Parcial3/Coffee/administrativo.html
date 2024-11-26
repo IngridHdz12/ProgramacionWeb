@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Área Administrativa</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="menu.html">Menú</a>
+            <a href="pedido.html">Ordenar</a>
+            <a href="administrativo.html">Área Administrativa</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Acceso Administrativo</h2>
+
+        <form id="loginForm">
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Ingresa la contraseña" required>
+
+            <button type="submit">Acceder</button>
+        </form>
+
+        <div id="error-message" style="color: red; display: none;">
+            <p>Contraseña incorrecta. Intenta nuevamente.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Cafetería XYZ. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="administrativo.js"></script>
+</body>
+</html>
