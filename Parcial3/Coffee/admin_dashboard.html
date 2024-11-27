@@ -34,14 +34,42 @@
                     <!-- Contenido generado dinámicamente -->
                 </tbody>
             </table>
-            <button id="add-menu-item">Agregar Producto</button>
+          
         </section>
+
+
+<!-- Formulario para crear un nuevo producto -->
+<button id="create-product-btn">Crear Producto</button>
+
+<div id="create-product-modal" style="display:none;">
+    <h3>Crear Producto</h3>
+    <form id="create-product-form">
+        <label for="create-product-name">Nombre:</label>
+        <input type="text" id="create-product-name" required><br>
+
+        <label for="create-product-description">Descripción:</label>
+        <input type="text" id="create-product-description" required><br>
+
+        <label for="create-product-price">Precio:</label>
+        <input type="number" id="create-product-price" required><br>
+
+        <label for="create-product-category">Categoría:</label>
+        <input type="text" id="create-product-category" required><br>
+
+        <button type="submit">Guardar Producto</button>
+        <button type="button" id="close-create-product-modal">Cancelar</button>
+    </form>
+</div>
+
+
+
+
         
         <!-- Modal de Edición de Producto (oculto por defecto) -->
-        <div id="edit-modal" style="display:none;">
+        <div id="edit-modal-producto" style="display:none;">
             <h3>Editar Producto</h3>
-            <form id="edit-form">
-                <input type="hidden" id="edit-id">
+            <form id="edit-form-producto">
+                <input type="hidden" id="edit-id-producto">
                 <label for="edit-name">Nombre:</label>
                 <input type="text" id="edit-name" required><br>
                 <label for="edit-description">Descripción:</label>
@@ -59,11 +87,11 @@
                 <thead>
                     <tr>
                         <th>ID Pedido</th>
+                        
                         <th>Cliente</th>
-                        <th>Domicilio</th>
-                        <th>Fecha</th>
+                        <th>Domicilio</th>                        
                         <th>Total</th>
-                        <th>Estado</th>
+                       
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -73,20 +101,19 @@
             </table>
         </section>
 
-        <div id="edit-modal" style="display:none;">
+        <div id="edit-modal-pedido" style="display:none;">
             <h3>Editar pedido</h3>
-            <form id="edit-form">
-                <input type="hidden" id="edit-id">
+            <form id="edit-form-pedido">
+                <input type="hidden" id="edit-id-pedido">
+         
                 <label for="edit-cliente">cliente:</label>
                 <input type="text" id="edit-cliente" required><br>
                 <label for="edit-domicilio">Domicilio:</label>
                 <input type="text" id="edit-domicilio" required><br>
-                <label for="edit-fecha">Fecha:</label>
-                <input type="date" id="edit-fecha" required><br>
+                
                 <label for="edit-total">Total:</label>
                 <input type="number" id="edit-total" required><br>
-                <label for="edit-estado">Estado:</label>
-                <input type="text" id="edit-estado" required><br>
+               
                 <button type="submit">Guardar Cambios</button>
                 <button type="button" id="close-edit-modal">Cancelar</button>
             </form>

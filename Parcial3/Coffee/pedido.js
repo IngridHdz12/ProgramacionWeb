@@ -56,13 +56,7 @@ document.getElementById('realizarCompraBtn').addEventListener('click', function(
     // Generar ID del pedido (puede ser automático, o un campo oculto)
     const idPedido = Math.floor(Math.random() * 1000);  // Solo el número, sin el prefijo 'PED'
 
-    // Crear la fecha en formato compatible con MySQL (YYYY-MM-DD HH:MM:SS)
-const fecha = new Date();
-const fechaMySQL = fecha.getFullYear() + '-' + (fecha.getMonth() + 1).toString().padStart(2, '0') + '-' + 
-                   fecha.getDate().toString().padStart(2, '0') + ' ' + 
-                   fecha.getHours().toString().padStart(2, '0') + ':' + 
-                   fecha.getMinutes().toString().padStart(2, '0') + ':' + 
-                   fecha.getSeconds().toString().padStart(2, '0');
+   
 
     // Enviar datos al servidor (POST request)
     fetch('http://localhost:3000/Coffee/pedido/', {
@@ -72,11 +66,11 @@ const fechaMySQL = fecha.getFullYear() + '-' + (fecha.getMonth() + 1).toString()
         },
         body: JSON.stringify({
             id_pedido: idPedido,  // ID único para el pedido
-            fecha: fechaMySQL,
+         
             nombre_cliente: nombreCliente,
             domicilio: domicilioCliente,
             total: totalGeneral,  // Aquí enviamos el total calculado
-            estado: 'Pendiente',  // El estado del pedido puede ser "Pendiente", "En preparación", "Completado", etc.
+           
         })
     })
     .then(response => response.json())
@@ -89,8 +83,7 @@ const fechaMySQL = fecha.getFullYear() + '-' + (fecha.getMonth() + 1).toString()
             document.getElementById('domicilioCliente').textContent = domicilioCliente;
             document.getElementById('totalCompra').textContent = totalGeneral.toFixed(2);  // Mostrar el total calculado
 
-            const fechaActual = new Date();
-            document.getElementById('fechaPedido').textContent = fechaActual.toLocaleString();
+            
             document.getElementById('pedidoId').textContent = idPedido;
 
             // Ocultar el formulario y mostrar el resumen
@@ -189,7 +182,7 @@ function generarComprobantePDF() {
     doc.setFontSize(12);
     doc.text(`Nombre del cliente: ${document.getElementById('nombreCliente').textContent}`, 20, 30);
     doc.text(`Domicilio: ${document.getElementById('domicilioCliente').textContent}`, 20, 40);
-    doc.text(`Fecha del pedido: ${document.getElementById('fechaPedido').textContent}`, 20, 50);
+
     doc.text(`ID del pedido: ${document.getElementById('pedidoId').textContent}`, 20, 60);
     doc.text(`Total a pagar: $${document.getElementById('totalCompra').textContent}`, 20, 70);
 
