@@ -16,7 +16,7 @@ async function cargarMenu() {
         productos.forEach(producto => {
             const fila = document.createElement('tr');
             fila.innerHTML = `
-                <td>${producto.id_producto}</td>
+                <td >${producto.id_producto}</td>
                 <td class="editable" data-column="nombre_producto">${producto.nombre_producto}</td>
                 <td class="editable" data-column="descripcion">${producto.descripcion}</td>
                 <td class="editable" data-column="precio">${producto.precio}</td>

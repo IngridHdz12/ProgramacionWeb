@@ -62,15 +62,15 @@ exports.getMenu = async (req, res) => {
 
 exports.editPedido = async (req, res) => {
     const { id_pedido } = req.params;
-    const { fecha, nombre_cliente, domicilio, total, estado } = req.body;
+    const {  nombre_cliente, domicilio, total } = req.body;
 
-    // Validar campos requeridos
-    if (!fecha || !nombre_cliente || !domicilio || !estado) {
-        return res.status(400).json({ message: 'Todos los campos excepto "total" son requeridos.' });
-    }
+    // // Validar campos requeridos
+    // if ( !nombre_cliente || !domicilio ||!total) {
+    //     return res.status(400).json({ message: 'Todos los campos excepto "total" son requeridos.' });
+    // }
 
     // Validar tipos de datos
-    if (typeof nombre_cliente !== 'string' || typeof domicilio !== 'string' || typeof estado !== 'string') {
+    if (typeof nombre_cliente !== 'string' || typeof domicilio !== 'string' ) {
         return res.status(400).json({ message: 'Los campos "nombre_cliente", "domicilio" y "estado" deben ser cadenas de texto.' });
     }
 
@@ -80,7 +80,7 @@ exports.editPedido = async (req, res) => {
     }
 
     try {
-        const filasAfectadas = await updatePedido(id_pedido, fecha, nombre_cliente, domicilio, total || 0, estado);
+        const filasAfectadas = await updatePedido(id_pedido,  nombre_cliente, domicilio, total || 0);
         if (filasAfectadas === 0) {
             return res.status(404).json({ message: `No se encontró el pedido con ID ${id_pedido}.` });
         }
@@ -96,7 +96,7 @@ exports.editProducto = async (req, res) => {
 
     // Validar campos requeridos
     if (!nombre_producto || !descripcion || !precio || !categoria ) {
-        return res.status(400).json({ message: 'Todos los campos son requeridos.' });
+        return res.status(400).json({ message: 'Todos los campos son necesarios.' });
     }
 
     // Validar tipos de datos
@@ -121,15 +121,15 @@ exports.editProducto = async (req, res) => {
 };
 
 exports.createPedido = async (req, res) => {
-    const { id_pedido, fecha, nombre_cliente, domicilio, total, estado } = req.body;
+    const { id_pedido,  nombre_cliente, domicilio, total } = req.body;
 
     // Validar campos requeridos
-    if (!fecha || !nombre_cliente || !domicilio || !estado) {
+    if ( !nombre_cliente || !domicilio ) {
         return res.status(400).json({ message: 'Todos los campos excepto "total" son requeridos.' });
     }
 
     // Validar tipos de datos
-    if (typeof nombre_cliente !== 'string' || typeof domicilio !== 'string' || typeof estado !== 'string') {
+    if (typeof nombre_cliente !== 'string' || typeof domicilio !== 'string' ) {
         return res.status(400).json({ message: 'Los campos "nombre_cliente", "domicilio" y "estado" deben ser cadenas de texto.' });
     }
 
@@ -145,7 +145,7 @@ exports.createPedido = async (req, res) => {
             return res.status(400).json({ message: `Ya existe un pedido con el ID ${id_pedido}.` });
         }
 
-        const insertId = await insertPedido(id_pedido, fecha, nombre_cliente, domicilio, total || 0, estado);
+        const insertId = await insertPedido(id_pedido, nombre_cliente, domicilio, total || 0);
         res.status(200).json({ message: `Se creó el pedido de ${nombre_cliente} con ID: ${insertId}` });
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -153,32 +153,29 @@ exports.createPedido = async (req, res) => {
 };
 
 exports.createProducto = async (req, res) => {
-    const { id_producto, nombre_producto, descripcion, precio, categoria,  } = req.body;
+    const { nombre_producto, descripcion, precio, categoria } = req.body;
 
     // Validar campos requeridos
-    if (!nombre_producto || !descripcion || !precio || !categoria ) {
-        return res.status(400).json({ message: 'Todos los campos excepto son requeridos.' });
+    if (!nombre_producto || !descripcion || !precio || !categoria) {
+        return res.status(400).json({ message: 'Todos los campos son requeridos.' });
     }
 
     // Validar tipos de datos
-    if (typeof nombre_producto !== 'string' || typeof descripcion !== 'string' || typeof categoria !== 'string' ){
-        return res.status(400).json({ message: 'Los campos "nombre_producto", "domicilio" y "estado" deben ser cadenas de texto.' });
+    if (typeof nombre_producto !== 'string' || typeof descripcion !== 'string' || typeof categoria !== 'string') {
+        return res.status(400).json({
+            message: 'Los campos "nombre_producto", "descripcion" y "categoria" deben ser cadenas de texto.',
+        });
     }
 
     // Validar rango
-    if (precio !== undefined && (isNaN(precio) || precio < 0)) {
+    if (isNaN(precio) || precio < 0) {
         return res.status(400).json({ message: 'El campo "precio" debe ser un número positivo.' });
     }
 
-    // Evitar duplicados
+    // Insertar el producto
     try {
-        const productoExistente = await selectProducto(id_producto);
-        if (productoExistente) {
-            return res.status(400).json({ message: `Ya existe un producto con el ID ${id_producto}.` });
-        }
-
-        const insertId = await insertProducto(id_producto, nombre_producto, descripcion, precio, categoria );
-        res.status(200).json({ message: `Se creó el producto de ${nombre_producto} con ID: ${insertId}` });
+        const insertId = await insertProducto(nombre_producto, descripcion, parseFloat(precio), categoria);
+        res.status(200).json({ message: `Producto creado exitosamente con ID: ${insertId}` });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
