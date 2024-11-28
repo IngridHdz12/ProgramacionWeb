@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid.js - Postres</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      color: #000000;
+    }
+
+    h1 {
+      color: #5c5c5c;
+    }
+
+    form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 300px;
+    }
+
+    form input, form button {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    form button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <link
+    href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+</head>
+<body>
+  <h1>Gestión de Postres</h1>
+  <div id="grid"></div>
+
+  <form id="addDataForm">
+    <h3>Agregar Postre</h3>
+    <input type="text" id="id" placeholder="ID del Postre" required />
+    <input type="text" id="name" placeholder="Nombre del Postre" required />
+    <input type="text" id="description" placeholder="Descripción del Postre" required />
+    <button type="submit">Agregar</button>
+  </form>
+
+  <script>
+    // Variable para mantener una instancia global del grid
+    let gridInstance;
+
+    // Función para cargar datos del servidor
+    async function loadData() {
+      const response = await fetch('http://localhost:3000/api/data');
+      const jsonData = await response.json();
+      return jsonData.map(item => [
+        item.id,
+        item.name,
+        item.description,
+        gridjs.html(`
+          <button onclick="deletePostre(${item.id})" style="color: red; border: none; background: none; cursor: pointer;">
+            Eliminar
+          </button>
+        `)
+      ]);
+    }
+
+    // Función para renderizar el grid
+    async function renderGrid() {
+      const gridContainer = document.getElementById('grid');
+      const data = await loadData(); // Carga los datos desde el servidor
+
+      // Si ya existe una instancia del grid, la destruye antes de crear una nueva
+      if (gridInstance) {
+        gridInstance.destroy();
+      }
+
+      // Crea una nueva instancia del grid
+      gridInstance = new gridjs.Grid({
+        columns: ['ID', 'Nombre del Postre', 'Descripción', 'Acciones'],
+        data: data,
+        search: true,
+        pagination: { limit: 5 },
+        sort: true,
+      });
+
+      gridInstance.render(gridContainer); // Renderiza el grid en el contenedor
+    }
+
+    // Evento para agregar un nuevo postre
+    document.getElementById('addDataForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const id = document.getElementById('id').value;
+      const name = document.getElementById('name').value;
+      const description = document.getElementById('description').value;
+
+      const response = await fetch('http://localhost:3000/api/data', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id, name, description }),
+      });
+
+      if (response.ok) {
+        alert('Se agregó el postre correctamente');
+        await renderGrid(); // Actualiza la tabla
+      } else {
+        alert('Error al agregar el postre');
+      }
+    });
+
+    // Evento para eliminar un postre
+    async function deletePostre(id) {
+  const response = await fetch(`http://localhost:3000/api/data/${id}`, {
+    method: 'DELETE',
+  });
+
+  if (response.ok) {
+    alert('Postre eliminado correctamente');
+    await renderGrid(); // Actualiza la tabla
+  } else {
+    const error = await response.json();
+    alert(`Error: ${error.message}`);
+  }
+}
+
+    // Inicializa el grid al cargar la página
+    renderGrid();
+  </script>
+</body>
+</html>
